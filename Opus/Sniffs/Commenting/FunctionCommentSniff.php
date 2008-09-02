@@ -28,9 +28,8 @@
  * @author      Ralf Claussnitzer <ralf.claussnitzer@slub-dresden.de>
  * @copyright   Copyright (c) 2008, OPUS 4 development team
  * @license     http://www.gnu.org/licenses/gpl.html General Public License
- * @version     $Id: AllTests.php 658 2008-09-01 09:46:55Z claussnitzer $
+ * @version     $Id$
  */
-
 
 if (class_exists('PHP_CodeSniffer_CommentParser_FunctionCommentParser', true) === false) {
     throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_CommentParser_FunctionCommentParser not found');
@@ -176,7 +175,7 @@ class Opus_Sniffs_Commenting_FunctionCommentSniff implements PHP_CodeSniffer_Sni
         $this->_methodName = $phpcsFile->getDeclarationName($stackPtr);
 
         try {
-            $this->_commentParser = new PHP_CodeSniffer_CommentParser_FunctionCommentParser($comment, $phpcsFile);
+            $this->_commentParser = new Opus_CommentParser_FunctionCommentParser($comment, $phpcsFile);
             $this->_commentParser->parse();
         } catch (PHP_CodeSniffer_CommentParser_ParserException $e) {
             $line = ($e->getLineWithinComment() + $commentStart);
@@ -237,6 +236,14 @@ class Opus_Sniffs_Commenting_FunctionCommentSniff implements PHP_CodeSniffer_Sni
                         $this->_currentFile->addError($error, ($commentStart + $tag));
                     }
                     break;
+                    
+                case 'dataProvider':
+                    if (($con !== 'comment') and ($con !== 'param') and ($con !== 'since') and
+                    ($con !== 'see') and ($con !== 'throws') and ($con !== 'return')) {
+                        $error = 'The @dataProvider tag is in the wrong order; the tag follows @see or @since or @param';
+                        $this->_currentFile->addError($error, ($commentStart + $tag));
+                    }
+                    break;
 
                 default:
                     $error = 'The @' . $content . ' tag is not allowed';
@@ -252,6 +259,7 @@ class Opus_Sniffs_Commenting_FunctionCommentSniff implements PHP_CodeSniffer_Sni
         $this->_processSees($commentStart);
         $this->_processThrows($commentStart);
         $this->_processReturn($commentStart, $commentEnd);
+        $this->_processDataProvider($commentStart, $commentEnd);
 
         // Check for a comment description
         $short = $comment->getShortComment();
@@ -829,4 +837,26 @@ class Opus_Sniffs_Commenting_FunctionCommentSniff implements PHP_CodeSniffer_Sni
             $this->_currentFile->addError($error, $errorPos);
         }
     }
+    
+    /**
+     * Check that dataProvider tags are not empty.
+     *
+     * @param  integer $commentStart The position in the stack where the comment started
+     * @param  integer $commentEnd   The position in the stack where the comment ended
+     * @return void
+     * 
+     * TODO Check if specified data provider function really exists.
+     */
+    protected function _processDataProvider($commentStart, $commentEnd) {
+        $dataProvider = $this->_commentParser->getDataProvider();
+        if (is_null($dataProvider) === false) {
+            $errorPos = ($commentStart + $dataProvider->getLine());
+            $content  = trim($dataProvider->getValue());
+            if (empty($content) === true) {
+                $error = 'No data provider specified for @dataProvider tag';
+                $this->_currentFile->addError($error, $errorPos);
+            }
+        }
+    }
+    
 }
