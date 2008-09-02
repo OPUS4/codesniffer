@@ -1,39 +1,36 @@
 <?php
 /**
- * This file contains a Sniff definition used by CodeSniffer to ensure adequate
- * documentation of variables.
+ * This file is part of OPUS. The software OPUS has been originally developed
+ * at the University of Stuttgart with funding from the German Research Net,
+ * the Federal Department of Higher Education and Research and the Ministry
+ * of Science, Research and the Arts of the State of Baden-Wuerttemberg.
  *
- * This file is part of OPUS. The software OPUS has been developed at the
- * University of Stuttgart with funding from the German Research Net
- * (Deutsches Forschungsnetz), the Federal Department of Higher Education and
- * Research (Bundesministerium fuer Bildung und Forschung) and The Ministry of
- * Science, Research and the Arts of the State of Baden-Wuerttemberg
- * (Ministerium fuer Wissenschaft, Forschung und Kunst des Landes
- * Baden-Wuerttemberg).
+ * OPUS 4 is a complete rewrite of the original OPUS software and was developed
+ * by the Stuttgart University Library, the Library Service Center
+ * Baden-Wuerttemberg, the Cooperative Library Network Berlin-Brandenburg,
+ * the Saarland University and State Library, the Saxon State Library -
+ * Dresden State and University Library, the Bielefeld University Library and
+ * the University Library of Hamburg University of Technology with funding from
+ * the German Research Foundation and the European Regional Development Fund.
  *
- * PHP version 5
+ * LICENCE
+ * OPUS is free software; you can redistribute it and/or modify it under the
+ * terms of the GNU General Public License as published by the Free Software
+ * Foundation; either version 2 of the Licence, or any later version.
+ * OPUS is distributed in the hope that it will be useful, but WITHOUT ANY
+ * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+ * details. You should have received a copy of the GNU General Public License
+ * along with OPUS; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  *
- * OPUS is free software; you can redistribute it and/or
- * modify it under the terms of the GNU General Public License
- * as published by the Free Software Foundation; either version 2
- * of the License, or (at your option) any later version.
- *
- * OPUS is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with OPUS; if not, write to the Free Software Foundation,
- * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- *
- * @category    Opus
- * @package     Opus_Coding_Standard
+ * @category    CodingStandard
  * @author      Ralf Claussnitzer <ralf.claussnitzer@slub-dresden.de>
- * @copyright   Universitaetsbibliothek Stuttgart, 1998-2008
- * @license     http://www.gnu.org/licenses/gpl.html
- * @version     $Id: FunctionCommentSniff.php 288 2008-07-17 12:47:23Z claussni $
+ * @copyright   Copyright (c) 2008, OPUS 4 development team
+ * @license     http://www.gnu.org/licenses/gpl.html General Public License
+ * @version     $Id: AllTests.php 658 2008-09-01 09:46:55Z claussnitzer $
  */
+
 
 if (class_exists('PHP_CodeSniffer_CommentParser_FunctionCommentParser', true) === false) {
     throw new PHP_CodeSniffer_Exception('Class PHP_CodeSniffer_CommentParser_FunctionCommentParser not found');
@@ -43,9 +40,9 @@ if (class_exists('PHP_CodeSniffer_CommentParser_FunctionCommentParser', true) ==
  *
  * Parses and verifies the doc comments for functions.
  *
- * @category    Opus
- * @package     Opus_Coding_Standard
- * @subpackage  Opus_Sniffs_Commenting
+ * @category    CodingStandard
+ * @package     Opus_Sniffs
+ * @subpackage  Commenting
  *
  */
 class Opus_Sniffs_Commenting_FunctionCommentSniff implements PHP_CodeSniffer_Sniff
