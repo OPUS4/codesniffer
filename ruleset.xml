@@ -2,7 +2,7 @@
 <ruleset name="OPUS">
     <description>OPUS 4 Coding Standard</description>
     <rule ref="PEAR">
-       <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" />
+       <exclude name="PEAR.Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" />
        <exclude name="PEAR.Commenting.ClassComment.TagIndent" />
     </rule>
     
