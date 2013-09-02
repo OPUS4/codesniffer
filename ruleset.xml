@@ -3,7 +3,21 @@
     <description>OPUS 4 Coding Standard</description>
     <rule ref="PEAR">
        <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" />
+       <exclude name="PEAR.Functions.FunctionDeclaration.BraceOnSameLine" />
        <exclude name="PEAR.Commenting.ClassComment.TagIndent" />
+    </rule>
+    
+    <!-- OPUS verwendet häufig 2 Spaces mehr als für PEAR definiert. -->
+    <rule ref="PEAR.Commenting.FileComment.TagIndent">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamTag">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamName">
+        <type>warning</type>
     </rule>
     
     <rule ref="Generic.Files.LineLength">
