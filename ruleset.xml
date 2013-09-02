@@ -11,6 +11,21 @@
         <exclude name="PEAR.Commenting.FileComment.EmptyCopyright" /> <!-- "Copyright (c)" stört bei uns" -->
     </rule>
     
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingAfterParams">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Commenting.FunctionComment.MissingParamComment">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Commenting.FunctionComment.MissingReturn">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Commenting.FunctionComment.Missing">
+        <type>warning</type>
+    </rule>
         
     <rule ref="PEAR.Commenting.FunctionComment.MissingParamTag">
         <type>warning</type>
