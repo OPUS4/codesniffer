@@ -4,6 +4,7 @@
     <description>OPUS 4 Coding Standard</description>
 
     <rule ref="PEAR">
+        <exclude name="PEAR.Classes.ClassDeclaration.OpenBraceNewLine" />
         <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine" />
         <exclude name="PEAR.Functions.FunctionDeclaration.BraceOnSameLine" />
         <exclude name="PEAR.Commenting.ClassComment.TagIndent" />
