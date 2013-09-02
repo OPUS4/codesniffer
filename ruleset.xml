@@ -9,6 +9,7 @@
         <exclude name="PEAR.Commenting.ClassComment.TagIndent" />
         <exclude name="PEAR.Commenting.FileComment.TagIndent" />
         <exclude name="PEAR.Commenting.FileComment.EmptyCopyright" /> <!-- "Copyright (c)" stört bei uns" -->
+        <exclude name="PEAR.Commenting.FunctionComment.ParameterCommentsNotAligned" />
     </rule>
     
     <rule ref="PEAR.Commenting.FunctionComment.SpacingAfterParams">
@@ -28,6 +29,14 @@
     </rule>
         
     <rule ref="PEAR.Commenting.FunctionComment.MissingParamTag">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingBeforeParamType">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Commenting.FunctionComment.SpacingBeforeTags">
         <type>warning</type>
     </rule>
     
