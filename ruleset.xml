@@ -45,7 +45,7 @@
         <type>warning</type>
     </rule>
     
-    <rule ref="PEAR.Functions.FunctionCallSignature">
+    <rule ref="PEAR.Functions.FunctionCallSignature.*">
         <type>warning</type>
     </rule>
     
