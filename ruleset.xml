@@ -45,6 +45,10 @@
         <type>warning</type>
     </rule>
     
+    <rule ref="PEAR.Functions.FunctionCallSignature">
+        <type>warning</type>
+    </rule>
+    
     <rule ref="Generic.Files.LineLength">
 	<properties>
             <property name="lineLimit" value="120" />
