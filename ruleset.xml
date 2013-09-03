@@ -69,6 +69,14 @@
         <type>warning</type>
     </rule>
     
+    <rule ref="PEAR.WhiteSpace.ObjectOperatorIndent.Incorrect">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.WhiteSpace.ScopeIndent.Incorrect">
+        <type>warning</type>
+    </rule>
+    
     <rule ref="Generic.Files.LineLength">
 	<properties>
             <property name="lineLimit" value="120" />
