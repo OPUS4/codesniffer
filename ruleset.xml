@@ -45,7 +45,27 @@
         <type>warning</type>
     </rule>
     
-    <rule ref="PEAR.Functions.FunctionCallSignature.*">
+    <rule ref="PEAR.Functions.FunctionCallSignature.CloseBracketLine">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Functions.FunctionCallSignature.Indent">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Functions.FunctionCallSignature.SpaceAfterOpenBracket">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Functions.FunctionCallSignature.SpaceBeforeCloseBracket">
+        <type>warning</type>
+    </rule>
+    
+    <rule ref="PEAR.Functions.FunctionCallSignature.SpaceBeforeOpenBracket">
         <type>warning</type>
     </rule>
     
