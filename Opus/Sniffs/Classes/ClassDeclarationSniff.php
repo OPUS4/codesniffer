@@ -14,7 +14,7 @@
  *
  * Modified for OPUS 4 project coding standard.
  * - checks that opening bracket of class is on the same line as the declaration
- * - TODO fix if bracket is not
+ * - can fix bracket automatically
  *
  * @author    Jens Schwidder <schwidder@zib.de>
  */
@@ -93,7 +93,17 @@ class Opus_Sniffs_Classes_ClassDeclarationSniff implements PHP_CodeSniffer_Sniff
             $error = 'Opening brace of a %s must be on the same line following the %s declaration';
             $data  = array($tokens[$stackPtr]['content'], $tokens[$stackPtr]['content']);
 
-            $phpcsFile->addError($error, $curlyBrace, 'OpenBraceWrongLine', $data);
+            $fix = $phpcsFile->addFixableError($error, $curlyBrace, 'OpenBraceWrongLine', $data);
+
+            if ($fix === true) {
+                $phpcsFile->fixer->beginChangeset();
+
+                for ($i = $curlyBrace - 1; $i > $lastContent; $i--) {
+                    $phpcsFile->fixer->replaceToken($i, ' ');
+                }
+
+                $phpcsFile->fixer->endChangeset();
+            }
 
             return;
         } // end if
@@ -121,7 +131,14 @@ class Opus_Sniffs_Classes_ClassDeclarationSniff implements PHP_CodeSniffer_Sniff
                     }
                 }
             }
-        } // end if
+        }
+        else {
+            $error = 'Expected 1 space before opening brace; none found';
+            $fix = $phpcsFile->addFixableError($error, $curlyBrace, 'SpaceBeforeBrace');
+            if ($fix === true) {
+                $phpcsFile->fixer->addContentBefore($curlyBrace, ' ');
+            }
+        }
 
     } // end process()
 
