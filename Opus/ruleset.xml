@@ -5,15 +5,8 @@
 
     <rule ref="Zend">
         <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman" />
-        <!--exclude name="PEAR.Classes.ClassDeclaration" /--> <!-- TODO noch nicht ersetzt -->
+        <exclude name="PEAR.Classes.ClassDeclaration" />
         <exclude name="PEAR.ControlStructures.ControlSignature" />
-    </rule>
-
-    <rule ref="Generic.Files.LineLength">
-    	<properties>
-            <property name="lineLimit" value="120" />
-            <property name="absoluteLineLimit" value="123" />     
-        </properties>
     </rule>
 
     <!--
@@ -21,6 +14,11 @@
     -->
     <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie">
     </rule>
+
+    <!--
+        Verifies that opening bracket for class is on same line as declaration.
+    -->
+    <rule ref="Opus.Classes.ClassDeclaration" />
 
     <!--
         Checks that 'else' is on next line.
@@ -34,10 +32,13 @@
     <rule ref="Generic.ControlStructures.InlineControlStructure">
     </rule>
 
-    <!-- TODO pruefen, dass { fuer Klasse in selber Zeile -->
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120" />
+            <property name="absoluteLineLimit" value="123" />
+        </properties>
+    </rule>
 
     <rule ref="Squiz.Classes.LowercaseClassKeywords" />
-
-    <rule ref="PEAR.Classes.ClassDeclaration" />
 
 </ruleset>
