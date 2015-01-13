@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ruleset name="OPUS">
+   
+    <description>OPUS 4 Coding Standard</description>
+
+    <rule ref="Zend">
+        <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman" />
+        <!--exclude name="PEAR.Classes.ClassDeclaration" /--> <!-- TODO noch nicht ersetzt -->
+        <exclude name="PEAR.ControlStructures.ControlSignature" />
+    </rule>
+
+    <rule ref="Generic.Files.LineLength">
+    	<properties>
+            <property name="lineLimit" value="120" />
+            <property name="absoluteLineLimit" value="123" />     
+        </properties>
+    </rule>
+
+    <!--
+        Checks that '{' for functions are on same line.
+    -->
+    <rule ref="Generic.Functions.OpeningFunctionBraceKernighanRitchie">
+    </rule>
+
+    <!--
+        Checks that 'else' is on next line.
+    -->
+    <rule ref="Opus.ControlStructures.ControlSignature">
+    </rule>
+
+    <!--
+        Verifies that '{...}' brackets are used for control structures like 'if' and 'for'.
+    -->
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+    </rule>
+
+    <!-- TODO pruefen, dass { fuer Klasse in selber Zeile -->
+
+    <rule ref="Squiz.Classes.LowercaseClassKeywords" />
+
+    <rule ref="PEAR.Classes.ClassDeclaration" />
+
+</ruleset>
