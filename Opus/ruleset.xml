@@ -34,11 +34,16 @@
 
     <rule ref="Generic.Files.LineLength">
         <properties>
-            <property name="lineLimit" value="120" />
-            <property name="absoluteLineLimit" value="123" />
+            <property name="lineLimit" value="121" /> <!-- EOL character counts -->
+            <property name="absoluteLineLimit" value="122" />
         </properties>
     </rule>
 
     <rule ref="Squiz.Classes.LowercaseClassKeywords" />
+
+    <!-- TODO Check function comments -->
+    <!-- TODO Check parameter tags -->
+    <!-- TODO Catch formatting isn't caught. -->
+    <!-- TODO Checking array formatting. -->
 
 </ruleset>
