@@ -1,0 +1,12 @@
+{
+  "name": "opus4-repo/codesniffer",
+  "description": "Coding style for OPUS 4",
+  "license": "GPL-2.0+",
+  "type": "library",
+  "keywords": [
+    "opus4",
+    "codesniffer",
+    "php"
+  ],
+  "homepage": "http://opus4.kobv.de"
+}
