@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <ruleset name="OPUS">
-   
+
     <description>OPUS 4 Coding Standard</description>
 
     <rule ref="Zend">
@@ -40,6 +40,8 @@
     </rule>
 
     <rule ref="Squiz.Classes.LowercaseClassKeywords" />
+    <rule ref="Generic.NamingConventions.UpperCaseConstantName" />
+    <rule ref="Generic.PHP.DisallowShortOpenTag" />
 
     <!-- TODO Check function comments -->
     <!-- TODO Check parameter tags -->

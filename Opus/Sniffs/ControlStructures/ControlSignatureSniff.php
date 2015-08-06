@@ -21,7 +21,9 @@ class Opus_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeSniffe
             '}EOLelseif (...) {EOL',
             '}EOLelse {EOL',
             'do {EOL',
+            'try {EOL',
+            '}EOLcatch {EOL'
         );
     }
 
-} 
+}
