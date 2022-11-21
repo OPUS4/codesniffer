@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<ruleset name="Opus4CodingStandard"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="../vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <description>OPUS 4 Coding Standard</description>
+
+    <rule ref="../vendor/laminas/laminas-coding-standard/src/LaminasCodingStandard/ruleset.xml" />
+
+    <!-- Loosening the Laminas coding style to allow our customary annotations. -->
+    <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
+        <properties>
+            <property name="forbiddenAnnotations" type="array">
+                <element value="@api"/>
+                <element value="@created"/>
+                <element value="@subpackage"/>
+                <element value="@version"/>
+                <element value="@expectedException"/>
+                <element value="@expectedExceptionCode"/>
+                <element value="@expectedExceptionMessage"/>
+                <element value="@expectedExceptionMessageRegExp"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!-- Don't require stricttypes declaration (yet). -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <severity>0</severity>
+    </rule>
+
+    <!-- Allow usage of get_class for PHP < 8 -->
+    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference">
+        <severity>0</severity>
+    </rule>
+
+</ruleset>

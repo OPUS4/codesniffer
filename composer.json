@@ -1,6 +1,6 @@
 {
   "name": "opus4-repo/codesniffer",
-  "description": "Coding style for OPUS 4",
+  "description": "OPUS 4 Coding Standard",
   "license": "GPL-2.0+",
   "type": "library",
   "keywords": [
@@ -8,5 +8,14 @@
     "codesniffer",
     "php"
   ],
-  "homepage": "http://opus4.kobv.de"
+  "homepage": "http://www.opus-repository.org",
+  "require": {
+    "laminas/laminas-coding-standard": "*",
+    "squizlabs/php_codesniffer": "*"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  }
 }
