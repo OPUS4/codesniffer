@@ -5,7 +5,7 @@
 
     <description>OPUS 4 Coding Standard</description>
 
-    <rule ref="../vendor/laminas/laminas-coding-standard/src/LaminasCodingStandard/ruleset.xml" />
+    <rule ref="LaminasCodingStandard" />
 
     <!-- Loosening the Laminas coding style to allow our customary annotations. -->
     <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
